@@ -1,11 +1,40 @@
 <script>
-	export let name;
+	import ContactCard from './ContactCard.svelte'
+
+	let name = "Name";
+	let jobTitle = "Title";
+	let description = "Desc";
+	let imageUrl = "https://image.shutterstock.com/image-vector/person-icon-260nw-282598823.jpg";
+
+	let done = false;
+
+	function addContact(){
+		done = true;
+	}
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+	<div id="form">
+		<div>
+			<input type="text" bind:value="{name}" id="name"/>
+		</div>
+		<div>
+			<input type="text" bind:value="{jobTitle}" id="jobTitle"/>
+		</div>
+		<div>
+			<input type="text" bind:value="{imageUrl}" id="imageUrl"/>
+		</div>
+		<div>
+			<input type="text" bind:value="{description}" id="description"/>
+		</div>
+	</div>
+	<button on:click="{addContact}">Add Contact Card</button>
+
+
+	{#if done}
+
+	<ContactCard userName="{name}" jobTitle="{jobTitle}" imageUrl="{imageUrl}" description="{description}" />
+
+	{/if}
 
 <style>
 	main {
