@@ -6,7 +6,7 @@
   export let userName;
   export let jobTitle;
   export let description;
-  export let imageUrl;
+  //export let imageUrl;
 
   const initialName = userName;
 </script>

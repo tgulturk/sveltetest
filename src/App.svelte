@@ -38,7 +38,7 @@
         id: Math.random(),
         name: name,
         title: jobTitle,
-        imageUrl: imageUrl,
+        // imageUrl: imageUrl,
         description: description,
       },
     ];
